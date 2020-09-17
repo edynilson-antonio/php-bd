@@ -5,8 +5,10 @@ $conexao = new mysqli('127.0.0.1', 'root', '', 'treinaweb'); // MYSQLI = Orienta
 $sql = "SELECT * FROM alunos";
 $resultado = $conexao->query($sql);
 
-// Posso especificar o ponteiro (neste exemplo, pegaria o 3° registro da tabela)
-$resultado->data_seek(2);
+// Lendo os registros a partir de um loop
 
-// Retorna uma linha por vez
-var_dump($resultado->fetch_assoc());
+# fetch_assoc
+while ($linha = $resultado->fetch_assoc()) {
+    var_dump($linha);
+    var_dump($linha["nome"]);
+}
