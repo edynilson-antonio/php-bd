@@ -7,8 +7,8 @@ $resultado = $conexao->query($sql);
 
 // Lendo os registros a partir de um loop
 
-# fetch_row
-while ($linha = $resultado->fetch_row()) {
+# fetch_object
+while ($linha = $resultado->fetch_object()) {
     var_dump($linha);
-    var_dump($linha[0]);
+    var_dump($linha->nome);
 }
