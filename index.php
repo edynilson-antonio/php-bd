@@ -6,6 +6,8 @@ $sql = "SELECT * FROM alunos";
 $resultado = $conexao->query($sql);
 
 # fetch_all
-$linhas = $resultado->fetch_all(MYSQLI_NUM); // opcional: MYSQLI_ASSOC, MYSQLI_NUM, or MYSQLI_BOTH
+$linhas = $resultado->fetch_all(MYSQLI_ASSOC);
 
-var_dump($linhas);
+foreach ($linhas as $linha) {
+    echo $linha['id'] . '°) ' . $linha['nome'] . '<br>';
+}
