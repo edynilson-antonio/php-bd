@@ -5,10 +5,7 @@ $conexao = new mysqli('127.0.0.1', 'root', '', 'treinaweb'); // MYSQLI = Orienta
 $sql = "SELECT * FROM alunos";
 $resultado = $conexao->query($sql);
 
-// Lendo os registros a partir de um loop
+# fetch_all
+$linhas = $resultado->fetch_all(MYSQLI_NUM); // opcional: MYSQLI_ASSOC, MYSQLI_NUM, or MYSQLI_BOTH
 
-# fetch_object
-while ($linha = $resultado->fetch_object()) {
-    var_dump($linha);
-    var_dump($linha->nome);
-}
+var_dump($linhas);
